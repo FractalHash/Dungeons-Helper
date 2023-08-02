@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey;
+  height: 3rem;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  &__link {
+    margin-right: 1.5rem;
+  }
+
+  &__logo {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../../assets/dragon__logo.png);
+    background-size: cover;
+  }
+}

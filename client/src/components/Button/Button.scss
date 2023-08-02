@@ -1,0 +1,66 @@
+.button__svg {
+  position: absolute;
+  top: -4000px;
+  left: -4000px;
+}
+
+#gooey-button {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  color: black;
+  filter: url("#gooey");
+  position: relative;
+  background-color: grey;
+  width: 12rem;
+  margin-top: 4rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.bubble {
+  background-color: grey;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: -1;
+}
+
+@for $bubble from 1 through 10 {
+  $size: 25px;
+  $delay: $bubble * 0.2s;
+  $duration: 3s + $bubble * 0.02s;
+
+  .bubble:nth-child(#{$bubble}) {
+    left: random(90) + 10 + px;
+    width: $size;
+    height: $size;
+    animation: move-#{$bubble} $duration infinite;
+    animation-delay: $delay;
+  }
+
+  @keyframes move-#{$bubble} {
+    0% {
+      transform: translate(0, 0);
+    }
+    99% {
+      transform: translate(0, -(random(80) + 50) * 1px);
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+}

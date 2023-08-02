@@ -1,0 +1,13 @@
+.hero {
+  background-image: url(../../assets/dndnme.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 94.3vh;
+
+  &__title {
+    text-align: center;
+    padding-top: 18rem;
+    font-size: 5rem;
+  }
+}
